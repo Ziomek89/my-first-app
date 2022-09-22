@@ -93,4 +93,4 @@ app.get('/all-crypto-data', (req, res, next) => {
   })
 
 
-app.listen(3000, () => console.log('yo the server is running'));
+app.listen(process.env.PORT, () => console.log('yo the server is running'));
