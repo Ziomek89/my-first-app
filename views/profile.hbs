@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    body {
+        background-image: url('/image/stanislaw-zarychta-_zMY1rz08tQ-unsplash.jpg');
+        background-size: cover;
+        color: white;
+        font-family: Brush Script MT;
+    }
+    .nav {
+	    display: flex;
+	    flex-direction: row;
+	    flex-wrap: nowrap;
+	    justify-content: space-between;
+	    align-items: baseline;
+	    align-content: stretch;
+    }
+    .title {
+        font-size: 84px;
+        text-align: center;
+    }
+    .greet {
+        font-size: 48px;
+    }
+    .home {
+        text-decoration: none;
+        color: black;
+        border: 1px inset black;
+        background-color: white; 
+    }
+    .logout {
+        background-color: white;
+        font-family: Brush Script MT;
+    }
+    </style>
+    <div class="nav">
+    <a class="home" href="/">Home Page</a> 
+    <form id="logout-form" action="/logout" method="POST">
+    <button class="logout">Logout</button> 
+    </form>
+    </div>
+    <h1 class="title">Crypto Tracker</h1>
+    <h1 class="greet">Hello {{username}}</h1>
+</body>
+</html>

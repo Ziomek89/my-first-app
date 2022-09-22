@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+        background-image: url('/image/michael-fortsch-jbmOrIedMrk-unsplash.jpg');
+        background-size: cover;
+        color: white;
+        font-family: Brush Script MT;
+     }
+    .title {
+        text-align: center;
+        font-size: 84px;
+    } 
+    .signTitle {
+        text-align: center;
+        font-size: 60px;
+    }
+    .signIn {
+ 	    display: flex;
+	    flex-direction: column;
+	    flex-wrap: nowrap;
+	    justify-content: center;
+	    align-items: center;
+	    align-content: center;
+        border: 10px solid blue;
+        border-inline-color: black;
+        margin-top: 5%;
+        margin-left: 20%;
+        margin-right: 20%;
+        height: 250px;
+    }
+    .email {
+        padding-bottom: 10px;
+    }
+    .username {
+        padding-bottom: 10px;
+    }
+    .password {
+        padding-bottom: 10px;
+    }
+    .signUp {
+        background-color: white;
+        font-family: Brush Script MT;
+    }
+    .home {
+        text-decoration: none;
+        color: black;
+        border: 1px inset black;
+        background-color: white;
+    }
+    .error {
+        background-color: red;
+        font-family: Rockwell;
+    }
+  </style>
+  <h1 class="title">Crypto Tracker</h1>
+  <h1 class="signTitle">Signup Page</h1>
+  <div class="signIn">
+  <form method="post" action="/signup">
+      <div class="email">
+      <input type="text" placeholder="Email" name="email">
+    </div>
+    <div class="username">
+      <input type="text" placeholder="Username" name="username">
+    </div>
+    <div class="password">
+      <input type="password" placeholder="Password" name="password">
+    </div>
+    <div>
+      <button class="signUp" type="submit">Sign Up</button>
+      <a class="home" href="/">Home Page</a> 
+    </div>
+  </form>
+    <div class="error">
+      {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+      {{/if}}
+    </div>
+  </div>
+</body>
+</html>

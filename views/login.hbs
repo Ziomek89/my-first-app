@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body {
+        background-image: url('/image/kanchanara-c6WCncBUmS0-unsplash.jpg');
+        background-size: cover;
+        color: white;
+        font-family: Brush Script MT;
+    }
+    .title {
+        text-align: center;
+        font-size: 84px;
+    }
+    .loginTitle {
+        text-align: center;
+        font-size: 60px;
+    }
+    .login {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+    border: 10px solid black;
+    border-inline-color: red;
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-right: 30%;
+    height: 250px;
+    }
+    .loginButton{
+        background-color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-family: Brush Script MT;
+    }
+    .signup{
+        text-decoration: none;
+        color: black;
+        border: 1px inset black;
+        background-color: white; 
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-left: 5px;
+    }
+    .username {
+        padding-bottom: 10px;
+    }
+    .password {
+        padding-bottom: 10px;
+    }
+    .error {
+        background-color: red;
+        font-family: Rockwell;
+    }
+  </style>
+  <h1 class="title">Crypto Tracker</h1>
+  <h1 class="loginTitle">Login Page</h1>
+  <div class="login">
+  <form class="stacked" method="post" action="/login">
+    <div class="username">
+      <input type="text" placeholder="Username" name="username">
+    </div>
+    <div class="password">
+      <input type="password" placeholder="Password" name="password">
+    </div>
+    <div>
+      <button class="loginButton" type="submit">Log In</button>
+        <a class="signup" href="/signup">
+        Signup
+        </a>
+    </div>
+        <div class="error">
+         {{#if errorMessage}}
+         <p>{{errorMessage}}</p>
+          {{/if}}
+        </div>
+  </form>
+  </div>
+</body>
+</html>
