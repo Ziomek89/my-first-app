@@ -1,3 +1,4 @@
+require('dotenv/config');
 const express = require('express');
 const morgan = require('morgan');
 const hbs = require('hbs');
@@ -10,7 +11,7 @@ const cookieParser = require('cookie-parser');
 const myCryptoService = new CryptoService();
 
 
-mongoose.connect('mongodb://localhost/cryptoUsers')
+mongoose.connect(process.env.MONGODB_URI)
   .then(x => console.log('successfully connected to database ' + x.connections[0].name))
   .catch(err => {
     console.log(err)
@@ -31,7 +32,7 @@ app.set('trust proxy', 1);
 // use session
 app.use(
   session({
-    secret: 'anyword',
+    secret: process.env.SESSION_SECRET,
     resave: true,
     saveUninitialized: false,
     cookie: {
@@ -41,7 +42,7 @@ app.use(
       maxAge: 900000
     },
     store: MongoStore.create({
-      mongoUrl: 'mongodb://localhost/cryptoUsers'
+      mongoUrl: process.env.MONGODB_URI
     })
   })
 );
