@@ -81,14 +81,19 @@ app.get('/crypto-data', (req, res, next) => {
      })
 
     })
-    .catch(err => console.log(err));
+    .catch(err => {
+        if(err) {
+            res.status(500).render('index.hbs' , {
+                errorMessage: 'Either enter a vaild crypto or, the app does not have data on it.'})
+        }
+    });
 });
 
 app.get('/all-crypto-data', (req, res, next) => {
     myCryptoService.getAllCrypto()
       .then(axiosResponse => {
         res.send(axiosResponse.data);
-
+        
       })
   })
 

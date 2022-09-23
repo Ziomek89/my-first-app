@@ -4,9 +4,9 @@ const axios = require('axios');
 
 
 const getCryptoPrice = axios.create({
-    baseURL: 'https://api.coinpaprika.com/v1/'
+    baseURL: 'http://api.coincap.io/v2/assets/'
 });
 
-getCryptoPrice.get('coins')
+getCryptoPrice.get('litecoin')
     .then(res => console.log(res.data))
     .catch(err => console.log(err));

@@ -63,11 +63,12 @@
     .title {
         text-align: center;
         font-size: 84px;
-        color: black;
+        text-shadow: 2px 2px blue;
     }
     .data {
         font-size: 36px;
         color: white;
+        text-shadow: 2px 2px black;
         font-family: Rockwell;
     }
     .lowercase {
@@ -76,6 +77,7 @@
     .allCrypto {
         font-size: 36px;
         color: white;
+        text-shadow: 2px 2px black;
         font-family: Rockwell;
     }
     .cryptoTrack {
@@ -99,6 +101,11 @@
         padding-left: 70px;
         padding-right: 70px;
     }
+        .error {
+        background-color: red;
+        font-family: Rockwell;
+        margin-right: 57%;
+    }
   </style>
   <div class="nav1">
    <a class="signup" href="/signup">Signup</a> 
@@ -118,6 +125,11 @@
     <input class="lowercase" type="text" placeholder="Crypto Name" name="crypto">
     <button class="getData" type="submit">Get Data</button>
     </form>
+        <div class="error">
+      {{#if errorMessage}}
+      <p>{{errorMessage}}</p>
+      {{/if}}
+    </div>
  </div>
  <div>
     <h1 class="allCrypto">All Crypto:</h1>
